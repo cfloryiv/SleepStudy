@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SleepStudy.Data", "SleepStudy.Data\SleepStudy.Data.csproj", "{9BAF6865-7DF0-4B08-9F7C-5394DB7799FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SleepStudy.UI", "SleepStudy.UI\SleepStudy.UI.csproj", "{3DA8DF62-8EE1-4123-9AEC-D7F606B96B6B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9BAF6865-7DF0-4B08-9F7C-5394DB7799FB} = {9BAF6865-7DF0-4B08-9F7C-5394DB7799FB}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BAF6865-7DF0-4B08-9F7C-5394DB7799FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BAF6865-7DF0-4B08-9F7C-5394DB7799FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BAF6865-7DF0-4B08-9F7C-5394DB7799FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BAF6865-7DF0-4B08-9F7C-5394DB7799FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA8DF62-8EE1-4123-9AEC-D7F606B96B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA8DF62-8EE1-4123-9AEC-D7F606B96B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA8DF62-8EE1-4123-9AEC-D7F606B96B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA8DF62-8EE1-4123-9AEC-D7F606B96B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3D6EDDD-846A-4E5D-A7EC-D6649E81EA0C}
+	EndGlobalSection
+EndGlobal
