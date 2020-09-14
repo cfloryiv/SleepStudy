@@ -1,0 +1,51 @@
+﻿@page "/sleepenter"
+@inherits SleepEnterBase
+
+<section>
+    
+    <h1 class="page-title">Sleep Entry</h1>
+    
+    <p>@Message</p>
+    @{ int duration; }
+    @if (sleepentries == null)
+    {
+        <p>Loading...</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Start</th>
+                <th>Wakeup</th>
+                <th>Duration</th>
+                <th>Note</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var entry in sleepentries)
+            {
+                {
+                    TimeSpan ts = entry.WakeTime - entry.StartTime;
+                    bool success=Int32.TryParse(ts.TotalMinutes.ToString(), out duration);
+                }
+                <tr>
+                    <td>@entry.StartTime</td>
+                    <td>@entry.WakeTime</td>
+                    <td>@duration</td>
+                    <td>@entry.Note</td>
+                </tr>
+            }
+            <tr>
+                <td>@newentry.StartTime</td>
+                <td>@newentry.WakeTime</td>
+                <td>0</td>
+                <td>@newentry.Note</td>
+            </tr>
+            </tbody>
+            </table>
+                <button class="btn btn-primary" @onclick="@WakeUpHandler">Wakup</button>
+                <button class="btn btn-secondary" @onclick="@SleepHandler">Sleep</button>
+                <button class="btn btn-secondary" @onclick="@NewDayHandler">New Day</button>
+    }
+</section>
