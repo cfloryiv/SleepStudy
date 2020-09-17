@@ -3,7 +3,9 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
+.sleep-table {
+    width: 50%;
+}
 a, .btn-link {
     color: #0366d6;
 }
