@@ -17,6 +17,7 @@ namespace SleepStudy.UI.Pages
         public SleepEntry newentry { get; set; } = new SleepEntry();
         public DateTime NewDay { get; set; } = DateTime.Now;
         public string Message { get; set; } = "";
+        public int SleepDuration { get; set; } = 0;
 
         protected override async Task OnInitializedAsync()
         {
@@ -50,7 +51,22 @@ namespace SleepStudy.UI.Pages
             {
                 Message = "Wakup database add operation failed";
             }
-            sleepentries = await Context.SleepEntries.Where(e => e.Date == NewDay).ToListAsync();
+
+            try
+            {
+                sleepentries = await Context.SleepEntries.Where(e => e.Date == NewDay).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Message ="Sleep entries failed";
+            }
+
+            SleepDuration = 0;
+            foreach (var sleepentry in sleepentries)
+            {
+                TimeSpan ts = sleepentry.WakeTime - sleepentry.StartTime;
+                SleepDuration += (int)ts.TotalMinutes;
+            }
                 newentry = new SleepEntry();
                 newentry.Date = NewDay;
                 newentry.StartTime = DateTime.Now;

@@ -28,7 +28,7 @@ namespace SleepStudy.UI.Pages
 
                 sleepLines = tempList
                     .OrderBy(s=>s.Date)
-                    .GroupBy(s => s.Date)
+                    .GroupBy(s => s.Date.Date)
                     .Select(g =>
                         new SleepLine(g.Key, g.Sum(f => 1), g.Sum(f => (int)SleepLine.CalcDuration(f.StartTime, f.WakeTime))));
             }

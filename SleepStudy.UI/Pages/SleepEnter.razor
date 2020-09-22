@@ -13,7 +13,7 @@
     else
     {
         <table class="table table-striped sleep-table">
-            <thead>
+            <thead class="thead-dark">
             <tr>
                 <th>Start</th>
                 <th>Wakeup</th>
@@ -32,9 +32,12 @@
                 <td></td>
             </tr>
             </tbody>
-            </table>
-                <button class="btn btn-primary" @onclick="@WakeUpHandler">Wakup</button>
-                <button class="btn btn-secondary" @onclick="@SleepHandler">Sleep</button>
-                <button class="btn btn-secondary" @onclick="@NewDayHandler">New Day</button>
+        </table>
+        <span style="display: inline-block; width: 50%;">
+        <button class="btn btn-primary" @onclick="@WakeUpHandler">Wakup</button>
+        <button class="btn btn-secondary" @onclick="@SleepHandler">Sleep</button>
+        <button class="btn btn-secondary" @onclick="@NewDayHandler">New Day</button>
+        <p style="border: 1px solid black; width: 250px; padding: 2px; margin: 2px;"> sleep duration: @SleepDuration</p>
+        </span>
     }
 </section>
