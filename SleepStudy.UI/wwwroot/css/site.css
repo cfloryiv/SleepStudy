@@ -5,6 +5,8 @@ html, body {
 }
 .sleep-table {
     width: 50%;
+    font-size: 1rem;
+    font-weight: bold;
 }
 a, .btn-link {
     color: #0366d6;

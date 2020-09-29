@@ -26,11 +26,13 @@ namespace SleepStudy.UI.Pages
                tempList = await Context.SleepEntries
                   .ToListAsync();
 
-                sleepLines = tempList
-                    .OrderBy(s=>s.Date)
-                    .GroupBy(s => s.Date.Date)
-                    .Select(g =>
-                        new SleepLine(g.Key, g.Sum(f => 1), g.Sum(f => (int)SleepLine.CalcDuration(f.StartTime, f.WakeTime))));
+               sleepLines = tempList
+                   .OrderByDescending(s => s.Date)
+                   .GroupBy(s => s.Date.Date)
+                   .Select(g =>
+                       new SleepLine(g.Key, g.Sum(f => 1),
+                           g.Sum(f => (int) SleepLine.CalcDuration(f.StartTime, f.WakeTime))))
+                   .Take(14);
             }
             catch (Exception ex)
             {
